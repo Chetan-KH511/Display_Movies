@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:movie_app/TabPages/Movies.dart';
+import 'package:movie_app/TabPages/TvSeries.dart';
+import 'package:movie_app/TabPages/upcomming.dart';
 import 'dart:convert';
 
 import 'package:movie_app/apilinks/apiLinks.dart';
@@ -175,24 +178,33 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: Text('Sample Text'),
             ),
             Container(
-              height: 55,
-              width: MediaQuery.of(context).size.width,
-              child: TabBar(
-                physics: BouncingScrollPhysics(),
-                labelPadding: const EdgeInsets.symmetric(horizontal: 25),
-                isScrollable: true,
+                height: 55,
+                width: MediaQuery.of(context).size.width,
+                child: TabBar(
+                    physics: const BouncingScrollPhysics(),
+                    labelPadding: const EdgeInsets.symmetric(horizontal: 25),
+                    isScrollable: true,
+                    controller: _tabController,
+                    indicator: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: Colors.amber.withOpacity(0.4),
+                    ),
+                    tabs: const [
+                      Tab(child: Text('Tv Series')),
+                      Tab(child: Text('Movies')),
+                      Tab(child: Text('Upcoming')),
+                    ])),
+            Container(
+              height: 1050,
+              child: TabBarView(
                 controller: _tabController,
-                indicator: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  color: Colors.amber.withOpacity(0.4),
-                ),
-                tabs: const [
-                  Tab(child: Text('Tv Series')),
-                  Tab(child: Text('Movies')),
-                  Tab(child: Text('Upcoming')),
+                children: [
+                  Tvseries(),
+                  Movies(),
+                  Upcomming(),
                 ],
               ),
-            ),
+            )
           ]))
         ],
       ),
