@@ -75,9 +75,38 @@ class _TvseriesState extends State<Tvseries> {
                                 )),
                             margin: EdgeInsets.only(left: 13),
                             width: 170,
-                            child:const Row(
+                            child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Padding(
+                                    padding: EdgeInsets.only(top: 2, left: 6),
+                                    child:
+                                        Text(popularTvseries[index]['Date'])),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 2, right: 6),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.black.withOpacity(0.5),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 2, right: 5, left: 6, bottom: 2),
+                                      child: Row(
+                                        children: [
+                                          const Icon(Icons.star, color: Colors.amber,),
+                                          SizedBox(width: 2),
+                                          Text(popularTvseries[index]
+                                                  ['vote_average']
+                                              .toString())
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
                             )));
                   },
                 ),
