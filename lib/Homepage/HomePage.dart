@@ -10,7 +10,8 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  //for tabController using tickerproviider
   List<Map<String, dynamic>> trendinglist = [];
 
   Future<void> trendinglistHome() async {
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage> {
           });
         }
       }
-    }else{}
+    } else {}
   }
 
 //For daily trending categories
@@ -56,6 +57,8 @@ class _HomePageState extends State<HomePage> {
   int uval = 1;
   @override
   Widget build(BuildContext context) {
+    TabController _tabController = TabController(length: 3, vsync: this);
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -99,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                     } else {
                       return const Center(
                         child: CircularProgressIndicator(
-                          color: Colors.red,
+                          color: Color.fromARGB(255, 225, 244, 54),
                         ),
                       );
                     }
@@ -131,13 +134,14 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.transparent,
                       ),
                       dropdownColor: Colors.black.withOpacity(0.6),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.arrow_drop_down_rounded,
                         color: Color.fromARGB(255, 255, 233, 34),
                       ),
                       value: uval, //acts as starting point
-                      items: [
+                      items: const [
                         DropdownMenuItem(
+                          value: 1,
                           child: Text(
                             'Weekly',
                             style: TextStyle(
@@ -146,9 +150,9 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16,
                             ),
                           ),
-                          value: 1,
                         ),
                         DropdownMenuItem(
+                          value: 2,
                           child: Text(
                             'Daily',
                             style: TextStyle(
@@ -157,7 +161,6 @@ class _HomePageState extends State<HomePage> {
                               fontSize: 16,
                             ),
                           ),
-                          value: 2,
                         )
                       ],
                     ),
@@ -168,8 +171,27 @@ class _HomePageState extends State<HomePage> {
           ),
           SliverList(
               delegate: SliverChildListDelegate([
-            Center(
+            const Center(
               child: Text('Sample Text'),
+            ),
+            Container(
+              height: 55,
+              width: MediaQuery.of(context).size.width,
+              child: TabBar(
+                physics: BouncingScrollPhysics(),
+                labelPadding: const EdgeInsets.symmetric(horizontal: 25),
+                isScrollable: true,
+                controller: _tabController,
+                indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.amber.withOpacity(0.4),
+                ),
+                tabs: const [
+                  Tab(child: Text('Tv Series')),
+                  Tab(child: Text('Movies')),
+                  Tab(child: Text('Upcoming')),
+                ],
+              ),
             ),
           ]))
         ],
