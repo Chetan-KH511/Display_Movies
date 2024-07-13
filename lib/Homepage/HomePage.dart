@@ -5,7 +5,6 @@ import 'package:movie_app/TabPages/Movies.dart';
 import 'package:movie_app/TabPages/TvSeries.dart';
 import 'package:movie_app/TabPages/upcomming.dart';
 import 'dart:convert';
-
 import 'package:movie_app/apilinks/apiLinks.dart';
 
 class HomePage extends StatefulWidget {
