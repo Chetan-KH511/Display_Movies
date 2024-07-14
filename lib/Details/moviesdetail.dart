@@ -5,6 +5,8 @@ import 'dart:convert';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app/Homepage/HomePage.dart';
 import 'package:movie_app/RepeatedFuncs/slider.dart';
+import 'package:movie_app/RepeatedFuncs/trailerui.dart';
+import 'package:movie_app/RepeatedFuncs/userreview.dart';
 import 'package:movie_app/apikey/apiKey.dart';
 
 class moviesDetail extends StatefulWidget {
@@ -22,7 +24,7 @@ class moviestate extends State<moviesDetail> {
   List<Map<String, dynamic>> recommendedmovies = [];
   List<Map<String, dynamic>> movietrailer = [];
 
-  List<Map<String, dynamic>> Moviegenres = [];
+  List Moviegenres = [];
 
   Future<void> MoviesDetails() async {
     var moviedetailurl = 'https://api.themoviedb.org/3/movie/' +
@@ -177,8 +179,8 @@ class moviestate extends State<moviesDetail> {
                           collapseMode: CollapseMode.parallax,
                           background: FittedBox(
                             fit: BoxFit.fill,
-                            child: trailerwatch(
-                              trailerytid: movietrailer[0]['key'],
+                            child: Trailerui(
+                              trailerid: movietrailer[0]['key'],
                             ),
                           ),
                         )),
@@ -235,7 +237,7 @@ class moviestate extends State<moviesDetail> {
 
                       Padding(
                         padding: EdgeInsets.only(left: 20, top: 10),
-                        child: ReviewUI(revdeatils: UserReviews),
+                        child: Userreview(revdeatils: UserReviews),
                       ),
                       Padding(
                           padding: EdgeInsets.only(left: 20, top: 20),
@@ -253,9 +255,6 @@ class moviestate extends State<moviesDetail> {
                           similarMovies.length),
                       Sliderlist(recommendedmovies, "Recommended Movies",
                           "movie", recommendedmovies.length),
-                      // Container(
-                      //     height: 50,
-                      //     child: Center(child: normaltext("By Niranjan Dahal")))
                     ]))
                   ]);
             } else {
