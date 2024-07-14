@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           SliverList(
               delegate: SliverChildListDelegate([
             const Center(
-              child: Text('Sample Text'),
+              child: Text('DBMS Project'),
             ),
             Container(
                 height: 55,
