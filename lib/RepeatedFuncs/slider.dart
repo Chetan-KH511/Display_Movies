@@ -31,7 +31,7 @@ Widget Sliderlist(
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              tvdetail(tvId: firstlistname[index]['id']),
+                              tvdetails(id: firstlistname[index]['id']),
                         ));
                   }
                 },

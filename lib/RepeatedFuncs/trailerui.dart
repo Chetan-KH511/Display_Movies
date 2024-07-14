@@ -6,10 +6,10 @@ class Trailerui extends StatefulWidget {
   Trailerui({this.trailerid});
 
   @override
-  State<Trailerui> createState() => _trailerwatchState();
+  State<Trailerui> createState() => _TraileruiState();
 }
 
-class _trailerwatchState extends State<Trailerui> {
+class _TraileruiState extends State<Trailerui> {
   late YoutubePlayerController _controller;
 
   @override

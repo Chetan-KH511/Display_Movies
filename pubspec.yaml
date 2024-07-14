@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
+  fluttertoast: ^8.2.6
   font_awesome_flutter: ^10.7.0
   http: ^1.2.1
   webview_flutter: ^4.8.0
