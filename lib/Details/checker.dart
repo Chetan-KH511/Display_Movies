@@ -13,30 +13,21 @@ class checkUi extends StatefulWidget {
 }
 
 class _checkuiState extends State<checkUi> {
-  // checkType() {
-  //   if (widget.newType == 'movie') {
-  //     return moviesDetail(
-  //       movieId: widget.newId,
-  //     );
-  //   } else if (widget.newType == 'tv') {
-  //     return tvdetail(
-  //       movieId: widget.newId,
-  //     );
-  //   } else {
-  //     return errorui();
-  //   }
-  // }
+  checkType() {
+    if (widget.newType == 'movie') {
+      return moviesDetail(
+        id: widget.newId,
+      );
+    } else if (widget.newType == 'tv') {
+      return tvdetails(
+        id: widget.newId,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return checkType();
   }
 }
 
-Widget errorui() {
-  return Scaffold(
-    body: Center(
-      child: Text('Error'),
-    ),
-  );
-}

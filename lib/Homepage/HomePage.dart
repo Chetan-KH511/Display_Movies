@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:movie_app/RepeatedFuncs/searchbar.dart';
 import 'package:movie_app/TabPages/Movies.dart';
 import 'package:movie_app/TabPages/TvSeries.dart';
 import 'package:movie_app/TabPages/upcomming.dart';
@@ -174,7 +175,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           SliverList(
               delegate: SliverChildListDelegate([
             const Center(
-              child: Text('DBMS Project'),
+              child: searchbar(),
             ),
             Container(
                 height: 55,
