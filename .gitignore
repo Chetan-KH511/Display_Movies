@@ -1,3 +1,5 @@
+#.gitignore
+C:\Users\legen\Flutter_projects\movie_app\lib\apikey\apiKey.dart
 # Miscellaneous
 *.class
 *.log
