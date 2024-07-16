@@ -8,8 +8,7 @@ import 'package:movie_app/RepeatedFuncs/slider.dart';
 import 'package:movie_app/RepeatedFuncs/torrent.dart';
 import 'package:movie_app/RepeatedFuncs/trailerui.dart';
 import 'package:movie_app/RepeatedFuncs/userreview.dart';
-import 'package:movie_app/apikey/apiKey.dart';
-
+import 'package:movie_app/apikey/apii.dart';
 class moviesDetail extends StatefulWidget {
   var id;
   moviesDetail({required this.id});

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:movie_app/apikey/apiKey.dart';
-
+import 'package:movie_app/apikey/apii.dart';
 class Upcomming extends StatefulWidget{
   @override
   State<Upcomming> createState() => _upcommingState();

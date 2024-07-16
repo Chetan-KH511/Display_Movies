@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:movie_app/RepeatedFuncs/slider.dart';
-import 'package:movie_app/apikey/apiKey.dart';
-
+import 'package:movie_app/apikey/apii.dart';
 class Tvseries extends StatefulWidget {
   @override
   State<Tvseries> createState() => _TvseriesState();

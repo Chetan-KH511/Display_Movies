@@ -6,8 +6,7 @@ import 'package:movie_app/Homepage/HomePage.dart';
 import 'package:movie_app/RepeatedFuncs/slider.dart';
 import 'package:movie_app/RepeatedFuncs/trailerui.dart';
 import 'package:movie_app/RepeatedFuncs/userreview.dart';
-import 'package:movie_app/apikey/apiKey.dart';
-
+import 'package:movie_app/apikey/apii.dart';
 class tvdetails extends StatefulWidget {
   var id;
   tvdetails({this.id});

@@ -11,7 +11,7 @@ Future<void> _launchUrl(Uri url) async {
 }
 
 void showTorrentOptions(BuildContext context, int movieId, String movieTitle,
-    String? releaseDate, String? imdbId)async {
+    String? releaseDate, String? imdbId) async {
   final String movieYear =
       releaseDate != null ? releaseDate.substring(0, 4) : '';
   final String? movieImdbId = imdbId;
@@ -41,18 +41,23 @@ void showTorrentOptions(BuildContext context, int movieId, String movieTitle,
             padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
             child: Text(
               'Search for torrents',
-              style: TextStyle(
-                  color: Colors.purple, fontSize: 16),
+              style: TextStyle(color: Colors.purple, fontSize: 16),
+            ),
+          ),
+          const Padding(
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+            child: Text(
+              'Only Works with VPN as the sites are banned in India',
+              style: TextStyle(color: Colors.purple, fontSize: 8),
             ),
           ),
           Flexible(
             child: Column(
               children: [
-                 // Custom divider
+                // Custom divider
                 const Text(
                   'Public Trackers',
-                  style: TextStyle(
-                      color: Colors.deepPurple, fontSize: 12),
+                  style: TextStyle(color: Colors.deepPurple, fontSize: 12),
                 ),
                 Expanded(
                   child: ListView.builder(
@@ -61,8 +66,8 @@ void showTorrentOptions(BuildContext context, int movieId, String movieTitle,
                       String option = _publicTorrents[index];
                       String? url = optionPublicTorrents[option];
                       return ListTile(
-                        leading: const Icon(Icons.play_arrow,
-                            color: Colors.red),
+                        leading:
+                            const Icon(Icons.play_arrow, color: Colors.red),
                         title: Text(
                           option,
                           style: const TextStyle(color: Colors.white),
@@ -83,8 +88,7 @@ void showTorrentOptions(BuildContext context, int movieId, String movieTitle,
                 const Divider(), // Custom divider
                 const Text(
                   'Private Trackers',
-                  style: TextStyle(
-                      color: Colors.amberAccent, fontSize: 12),
+                  style: TextStyle(color: Colors.amberAccent, fontSize: 12),
                 ),
                 Expanded(
                   child: ListView.builder(
@@ -93,8 +97,8 @@ void showTorrentOptions(BuildContext context, int movieId, String movieTitle,
                       String option = _privateTorrents[index];
                       String? url = optionPrivateTorrents[option];
                       return ListTile(
-                        leading: const Icon(Icons.play_arrow,
-                            color: Colors.red),
+                        leading:
+                            const Icon(Icons.play_arrow, color: Colors.red),
                         title: Text(
                           option,
                           style: const TextStyle(color: Colors.white),
