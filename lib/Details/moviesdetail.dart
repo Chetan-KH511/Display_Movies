@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:movie_app/Homepage/HomePage.dart';
 import 'package:movie_app/RepeatedFuncs/slider.dart';
+import 'package:movie_app/RepeatedFuncs/torrent.dart';
 import 'package:movie_app/RepeatedFuncs/trailerui.dart';
 import 'package:movie_app/RepeatedFuncs/userreview.dart';
 import 'package:movie_app/apikey/apiKey.dart';
@@ -61,6 +62,7 @@ class moviestate extends State<moviesDetail> {
           "runtime": mdetjson['runtime'],
           "budget": mdetjson['budget'],
           "revenue": mdetjson['revenue'],
+          "imdbId" : mdetjson['imdb_id'],
         });
       }
       for (var i = 0; i < mdetjson['genres'].length; i++) {
@@ -236,13 +238,13 @@ class moviestate extends State<moviesDetail> {
                           width: double.maxFinite,
                           child: FloatingActionButton(
                             backgroundColor: const Color.fromARGB(155, 255, 235, 59),
-                            // onPressed: () => showTorrentOptions(
-                            //     context,
-                            //     widget.movieId,
-                            //     widget.movieTitle,
-                            //     releaseDate,
-                            //     imdbId),
-                            onPressed: () {  },
+                            onPressed: () => showTorrentOptions(
+                                context,
+                                widget.id as int,
+                                movieDetails[0]['title'],
+                                movieDetails[0]['Date'],
+                                movieDetails[0]['imdbId']),
+                            
                             child: const Text(
                               'Torrent Search / Download',
                               style: TextStyle(
