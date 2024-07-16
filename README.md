@@ -1,16 +1,15 @@
-# movie_app
+TMDB Movie App
+ Gets required data from the TMDB(The Movie DataBase) API
 
-A new Flutter project.
+Has Search bar, which shows movies with the entered keywords
 
-## Getting Started
+Has details screen consisting of Movie details, creator, youtube player for trailer and user reviews
+Displays Recommended, Popular, and Top rated Tv series as well as movies
 
-This project is a starting point for a Flutter application.
+  
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+https://github.com/user-attachments/assets/eaf65f45-639a-40f3-96c2-028940bdf79f
+
