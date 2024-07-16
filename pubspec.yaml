@@ -30,8 +30,10 @@ environment:
 dependencies:
   carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
+  dotenv: ^4.2.0
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.1.0
   fluttertoast: ^8.2.6
   font_awesome_flutter: ^10.7.0
   http: ^1.2.1
