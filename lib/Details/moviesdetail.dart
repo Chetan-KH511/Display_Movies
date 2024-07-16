@@ -166,11 +166,11 @@ class moviestate extends State<moviesDetail> {
                                         builder: (context) => HomePage()),
                                     (route) => false);
                               },
-                              icon: Icon(FontAwesomeIcons.houseUser),
+                              icon: const Icon(FontAwesomeIcons.houseUser),
                               iconSize: 25,
                               color: Colors.white)
                         ],
-                        backgroundColor: Color.fromRGBO(18, 18, 18, 0.5),
+                        backgroundColor:const Color.fromRGBO(18, 18, 18, 0.5),
                         centerTitle: false,
                         pinned: true,
                         expandedHeight:
@@ -190,20 +190,20 @@ class moviestate extends State<moviesDetail> {
                         children: [
                           Row(children: [
                             Container(
-                                padding: EdgeInsets.only(left: 10, top: 10),
+                                padding: const EdgeInsets.only(left: 10, top: 10),
                                 height: 50,
                                 width: MediaQuery.of(context).size.width,
                                 child: ListView.builder(
-                                    physics: BouncingScrollPhysics(),
+                                    physics: const BouncingScrollPhysics(),
                                     scrollDirection: Axis.horizontal,
                                     itemCount: Moviegenres.length,
                                     itemBuilder: (context, index) {
                                       //generes box
                                       return Container(
-                                          margin: EdgeInsets.only(right: 10),
-                                          padding: EdgeInsets.all(10),
+                                          margin: const EdgeInsets.only(right: 10),
+                                          padding: const EdgeInsets.all(10),
                                           decoration: BoxDecoration(
-                                              color:
+                                              color:const
                                                   Color.fromRGBO(25, 25, 25, 1),
                                               borderRadius:
                                                   BorderRadius.circular(10)),
@@ -214,20 +214,48 @@ class moviestate extends State<moviesDetail> {
                           Row(
                             children: [
                               Container(
-                                  padding: EdgeInsets.all(10),
-                                  margin: EdgeInsets.only(left: 10, top: 10),
+                                  padding:const EdgeInsets.all(10),
+                                  margin:const EdgeInsets.only(left: 10, top: 10),
                                   height: 40,
                                   decoration: BoxDecoration(
                                       color: Color.fromRGBO(25, 25, 25, 1),
                                       borderRadius: BorderRadius.circular(10)),
                                   child: Text(
-                                      movieDetails[0]['runtime'].toString() +
-                                          ' min'))
+                                      '${movieDetails[0]['runtime']} min'))
                             ],
                           )
                         ],
                       ),
                       Padding(
+                    padding: const EdgeInsets.fromLTRB(25, 10, 25, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Center(
+                            child: SizedBox(
+                          width: double.maxFinite,
+                          child: FloatingActionButton(
+                            backgroundColor: const Color.fromARGB(155, 255, 235, 59),
+                            // onPressed: () => showTorrentOptions(
+                            //     context,
+                            //     widget.movieId,
+                            //     widget.movieTitle,
+                            //     releaseDate,
+                            //     imdbId),
+                            onPressed: () {  },
+                            child: const Text(
+                              'Torrent Search / Download',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ))
+                      ],
+                    ),
+                  ),
+                      const Padding(
                           padding: EdgeInsets.only(left: 20, top: 10),
                           child: Text('Movie Story :')),
                       Padding(
@@ -236,21 +264,18 @@ class moviestate extends State<moviesDetail> {
                               movieDetails[0]['overview'].toString())),
 
                       Padding(
-                        padding: EdgeInsets.only(left: 20, top: 10),
+                        padding: const EdgeInsets.only(left: 20, top: 10),
                         child: Userreview(revdeatils: UserReviews),
                       ),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
-                          child: Text('Release Date : ' +
-                              movieDetails[0]['release_date'].toString())),
+                          padding:const EdgeInsets.only(left: 20, top: 20),
+                          child: Text('Release Date : ${movieDetails[0]['release_date']}')),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
-                          child: Text('Budget : ' +
-                              movieDetails[0]['budget'].toString())),
+                          padding: const EdgeInsets.only(left: 20, top: 20),
+                          child: Text('Budget : ${movieDetails[0]['budget']}')),
                       Padding(
-                          padding: EdgeInsets.only(left: 20, top: 20),
-                          child: Text('Revenue : ' +
-                              movieDetails[0]['revenue'].toString())),
+                          padding: const EdgeInsets.only(left: 20, top: 20),
+                          child: Text('Revenue : ${movieDetails[0]['revenue']}')),
                       Sliderlist(similarMovies, "Similar Movies", "movie",
                           similarMovies.length),
                       Sliderlist(recommendedmovies, "Recommended Movies",
@@ -258,7 +283,7 @@ class moviestate extends State<moviesDetail> {
                     ]))
                   ]);
             } else {
-              return Center(
+              return const Center(
                   child: CircularProgressIndicator(
                 color: Colors.amber,
               ));
